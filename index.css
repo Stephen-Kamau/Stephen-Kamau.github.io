@@ -153,22 +153,19 @@ responsive
       border: none;
       color: white;
       text-align: center;
-      padding: 8px 15px;
+      padding:0px;
       text-decoration: none;
       font-size: 8px;
       border-radius: 1.5px;
-      float: right;
-      background-position: 5px 5px;
-      height: 8px;
-      
+      height: 12px;
   }
 
   input[type=text] {
   	  padding: 8px 15px;
   	  height: 8px;
-      width: 50px;
+      width: 60px;
       box-sizing: border-box;
-      border: 2px solid #ccc;
+      border: 1.5px solid #ccc;
       border-radius: 2px;
       font-size: 8px;
       background-position: 5px 5px; 
