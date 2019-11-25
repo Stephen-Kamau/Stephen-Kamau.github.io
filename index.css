@@ -77,7 +77,6 @@ li:nth-child(odd){
 	margin: 0px;
 	padding: 0px;
 	position:relative;
-	width:95%;
 	height:470px;
 	float:center;
 
@@ -125,8 +124,17 @@ responsive
 */
 @media only screen and (max-width: 600px) {
   .row {
-    width: 100%;
+    display: inline;
     font-size: 17px;
+    height: 400px;
+  }
+  .col-1{
+  	width: 100%;
+  	text-align: center;
+  	position: 0px auto;
+  }
+  .col-2{
+  	width: 100%;
   }
 
 }
