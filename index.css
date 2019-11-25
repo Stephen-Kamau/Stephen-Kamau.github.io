@@ -137,5 +137,44 @@ responsive
   	width: 100%;
   	position: 0px auto;
   }
+  .header{
+  	border: 1px solid #cac;
+  	padding: 1px;
+  	background-color: #cfcfcf;
+  	color: #282828;
+  	text-align: center;
+  	height: 40px;
+  	margin: 0px;
+
+  }
+
+  button{
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      text-decoration: none;
+      margin: 2px;
+      font-size: 8px;
+      border-radius: 1.5px;
+      float: right;
+  }
+
+  input[type=text] {
+  	  padding: 8px 15px;
+      width: 70px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 2px;
+      font-size: 8px;
+      background-position: 5px 5px; 
+      transition: width 0.3s ease-in-out;
+      
+  }
+
+  h3{
+  	color: rgb(127,245 ,2);
+  	font-size: 12px;
+  }
 
 }
