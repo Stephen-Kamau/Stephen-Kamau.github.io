@@ -139,21 +139,3 @@ responsive
   }
 
 }
-
-@media only screen and (min-width: 601px) {
-  .row {
-    height: 400px;
-    font-size: 20px;
-    display: inline;
-  }
-  .col-1{
-  	width: 25%;
-  	text-align: center;
-  	position: 0px auto;
-  	background-color: cyan;
-  }
-  .col-2{
-  	width: 75%;
-  	position: 0px auto;
-  }
-}
