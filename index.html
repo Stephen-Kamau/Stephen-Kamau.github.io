@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Landing Home Page for the seach</title>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUUobfWFz77O_-tsHekQVWttTN-6acCWg&callback=initMap"
-	async defer></script>
-	<link rel="stylesheet" type="text/css" href="index.css">
-</head>
-<script>
-var map,geocoder,marker;
-
-function initMap() {
-	geocoder = new google.maps.Geocoder();
-	//position
-  let  location = {lat: -25.363 , lng : 131.043};
-  map = new google.maps.Map(document.getElementById("getPos"),{
-    zoom: 4,
-    center : location
-  });
-  //pointer
-  marker = new google.maps.Marker({
-    position : location ,
-    map : map
-  });
-}
-
-function getMap(keyword){
-	geocoder.geocode({'address':keyword},function(results,status){
-		if(status=='OK'){
-			map.setCenter(results[0].geometry.location);
-			marker=new google.maps.Marker({
-				map:map,
-				position:results[0].geometry.location
-			});
-		}else{
-			alert('Unable to fetch location: '+status);
-		}
-	});
-}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Weather Search</title>
+<meta property="og:url"  content="https://www.your-domain.com/facebook.com" />
+<meta property="og:type"   content="website" />
+<meta property="og:title" content="share" />
+<meta property="og:description"   content="" />
+<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+<link rel="stylesheet" type="text/css" href="index.css">
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkcYsJqIdzCSP_eMFAV7oSpgCObnZLTxpfwEHoboOy7LVuk25IOdt6nYaGk64HC5' async defer>
 </script>
+</head>
 <body>
-	<div class="head">
-		<ul>
-		  <li><a class="active" href="index.html">Home</a></li>
-		  <li><a href="Recent Search">Recent</a></li>
-		  <li><a href="Developer">Developer</a></li>
-		  <li><a href="About Devc">About Devc</a></li>
-		  <li>
-			<form id="searchform" action="" method="post">
-				<div>
-					<input type="text" name="search" id="keyword" placeholder="Search.." required>
-					<span><button type="submit" name="submit">REQUEST</button></span>
-				</div>
-			</form>
-		  </li>
-		</ul>
-	</div>
-
-		<div id="getPos"></div>
-		
-		<div class="autocomplete"></div> 
-		<div class="footer">
-			<h6>&copy; stiveckamash &reg;</h6>
+	<div class="header">
+		<div class="search">
+			<h3 class="error"></h3>
+			<input type="text" name="search" placeholder="Search...." id="place">
+			<span>
+				<button name="submit" id="sendWeather" >Search</button>
+			</span>
 		</div>
-	<script>
-		var form = document.querySelector('#searchform');
-		form.addEventListener('submit',function(e){
-			e.preventDefault();
-			getMap(document.getElementById('keyword').value);
-		})
-	</script>
+	    <h3>My Geo search for maps and weather</h3>
+	</div>
+	<div class="row">
+		<div class="col-1">
+			<div class="items">
+				<ul>
+					<div id="fb-root"></div>
+					  <script>(function(d, s, id) {
+					    var js, fjs = d.getElementsByTagName(s)[0];
+					    if (d.getElementById(id)) return;
+					    js = d.createElement(s); js.id = id;
+					    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+					    fjs.parentNode.insertBefore(js, fjs);
+					  }(document, 'script', 'facebook-jssdk'));</script>
 
+					<p>
+						<div class="fb-share-button" 
+						    data-href="https://www.your-domain.com/facebook.com" 
+						    data-layout="button_count">
+						  </div>
+					</p>
+					<li> Place:<span id="placename"></span></li>
+					<li>Temperature</li>
+					<li class="temp"></li>
+					<li>Rainy and cloud state</li>
+					<li class="cloud"></li>
+					<li>wind speed</li>
+					<li class="speed"></li>
+					<li>Humidity</li>
+					<li class="humidity"></li>
+					<li>Wind direction</li>
+					<li class="direction"></li>
+				</ul>
+			</div>
+			<div class="change">
+				<h2>Convert::</h2>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="map"></div>
+			<div id="placesCount"></div>
+		</div>
+
+	</div>
+	<div class="footer">
+		<footer>
+			<p>&copy; steve 2017</p>
+		</footer>
+	</div>
+	<script src="jquery-3.4.1.js"></script>
+	<script src="index.js"></script>
+	<script src="indexMap.js"></script>
 </body>
 </html>
