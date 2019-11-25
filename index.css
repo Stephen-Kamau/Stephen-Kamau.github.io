@@ -125,7 +125,7 @@ responsive
 @media only screen and (max-width: 600px) {
   .row {
     display: inline;
-    font-size: 17px;
+    font-size: 14px;
     height: 400px;
   }
   .col-1{
@@ -135,24 +135,25 @@ responsive
   }
   .col-2{
   	width: 100%;
+  	position: 0px auto;
   }
 
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 900px) {
   .row {
-    width: 95%;
+    height: 400px;
+    font-size: 20px;
+    display: inline;
   }
-}
-
-@media only screen and (min-width: 768px) {
-  .row {
-    width: 90%;
+  .col-1{
+  	width: 25%;
+  	text-align: center;
+  	position: 0px auto;
+  	background-color: cyan;
   }
-}
-
-@media only screen and (min-width: 992px) {
-  .row {
-    width: 70%;
+  .col-2{
+  	width: 75%;
+  	position: 0px auto;
   }
 }
